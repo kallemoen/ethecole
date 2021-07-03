@@ -1,0 +1,42 @@
+//Accent Color
+$accent-color: #E3347A;
+
+//Blacks And Greys
+$grey-black: #131B23;
+$grey-darkest: #61646D;
+$grey-dark: #053b2b;
+$grey-medium: #C8CACF;
+$grey-light: #F1F2F4;
+$grey-lightest: #FBFBFB;
+
+$white: #ffffff;
+$black: #010101;
+
+$red: #FF8162;
+$blue: #72B9FF;
+$yellow: #FFD66D;
+$green: #53EFCC;
+
+.accent-color { color: $accent-color; }
+.red { color: $red; }
+.blue { color: $blue; }
+.yellow { color: $yellow; }
+.green { color: $green; }
+.grey-black { color: $grey-black; }
+.grey-darkest { color: $grey-darkest; }
+.grey-dark { color: $grey-dark; }
+.grey-medium { color: $grey-medium; }
+.grey-light { color: $grey-light; }
+.grey-lightest { color: $grey-lightest; }
+.white { color: $white; }
+
+.red-bg { background-color: $red; }
+.blue-bg { background-color: $blue; }
+.yellow-bg { background-color: $yellow; }
+.green-bg { background-color: $green; }
+.grey-black-bg { background-color: $grey-black; }
+.grey-dark-bg { background-color: $grey-dark; }
+.grey-medium-bg { background-color: $grey-medium; }
+.grey-light-bg { background-color: $grey-light; }
+.grey-lightest-bg { background-color: $grey-lightest; }
+.white-bg { background-color: $white; }

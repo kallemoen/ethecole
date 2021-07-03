@@ -1,0 +1,29 @@
+@import "viewports";
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5em;
+}
+
+.link-list a {
+	margin-bottom: 0.5em;
+	color: $grey-dark;
+	text-decoration: none;
+	&:hover {
+		color: darken($grey-dark, 15%) ;
+	}
+}
+
+@include for-tablet-landscape-down {
+	.main-content {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+
+		& > div {
+			margin-bottom: 2em;
+		}
+	}
+}
+

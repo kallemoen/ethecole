@@ -1,0 +1,167 @@
+@import "viewports";
+@import "colors";
+
+body {
+  background-color: $black;
+  background-image: 
+    url('../images/elipse-pink.svg'),
+    url('../images/elipse-purple.svg');
+  background-position:
+    -850px -931px, 
+    310px -320px;
+  background-repeat:
+    no-repeat; /* this applies to both images */
+}
+
+.site-container {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 1280px;
+}
+
+
+// Main container for pages
+.sections {
+  margin: 10em 0em;
+  width: 100%;
+}
+
+// Distance between items in main container
+.sections .section {
+  margin-bottom: 12em;
+  &:last-child {
+    margin-bottom: 0em;
+  }
+}
+
+@mixin grid {
+	display: flex;
+	margin: 0 auto;
+}
+
+// Main container for pages with content that doesn't typically
+// extend beyond the page (i.e. no overflow past viewport)
+.full-viewport-container {
+  width: 100%;
+  min-height: 75vh;
+  box-sizing: border-box;
+  margin-top: 2em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  > div:first-child {
+    transform: translateY(-1em);
+    @include grid;
+    width: 70%;
+  }
+
+  @include for-tablet-landscape-down {
+    display: inline-block;
+    padding-top: 2em;
+
+    > div:first-child {
+      text-align: center;
+    }
+  }
+}
+
+// ----------------- Optional Styles ------------------
+
+// Adds white border with lighter accent green gradient from top right
+
+// /*
+.include-border {
+  > div:first-child {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2em 3em;
+
+    @include for-tablet-landscape-down {
+      padding: 2em;
+    }
+  }
+}
+
+.include-gradient {
+  > div:first-child {
+    background: linear-gradient(30deg, $accent-color, lighten($accent-color, 10%));
+  }
+}
+// */
+
+// ----------------- End Optional Styles ------------------
+
+
+.max-row { @include grid; width: 100%; }
+.big-row { @include grid; width: 80%;  }
+.medium-row { @include grid; width: 70%; }
+.small-row { @include grid; width: 60%; }
+
+.dual-col {
+  display: flex;
+  flex: auto;
+
+  img {
+    width: 100%; 
+    height: auto;
+  }
+
+  > div:first-child {
+    width: 100%;
+    padding-right: 3em;
+  }
+
+  > div:last-child {
+    width: 100%;
+  }
+}
+
+
+@include for-tablet-landscape-down {
+	.max-row, .big-row, .medium-row, .small-row  {
+    width: 100%;
+  }
+  .dual-col {
+    display: block;
+    > :first-child {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.flying-text {
+  position: relative;
+  width: 100%;
+  bottom: 300px;
+  margin-bottom: -200px;
+
+  .svg-object {
+    width: 100%; 
+    height: 200px;
+  }
+
+  .text-object {
+    width: 100%;
+    font-size: 25px;
+  }
+}
+
+@include for-tablet-landscape-down {
+  .flying-text {
+    position: static;
+    margin-top: 0em;
+    margin-bottom: -1.5em; 
+
+    .svg-object {
+      width: 100%; 
+      height: auto;
+    }
+    
+    .text-object {
+      font-size: 45px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<form
+  id="contact-form"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  action="/contact/thank-you"
+>
+  <div>
+    <div class="form__group">
+      <input
+        type="text"
+        class="form__field"
+        placeholder="Name"
+        name="name"
+        id="contact-form-name"
+        required
+      />
+      <label for="contact-form-name" class="form__label">Name</label>
+    </div>
+
+    <div class="form__group extend-margin">
+      <input
+        type="email"
+        class="form__field"
+        placeholder="Email"
+        name="email"
+        id="contact-form-email"
+        required
+      />
+      <label for="contact-form-email" class="form__label">Email</label>
+    </div>
+  </div>
+
+  <div>
+    <div class="form__group">
+      <textarea
+        class="form__field"
+        placeholder="Message"
+        name="message"
+        id="contact-form-message"
+        required
+      ></textarea>
+      <label for="contact-form-message" class="form__label">Message</label>
+    </div>
+    <div class="form__group">
+      <button type="submit" class="btn form-button icon-btn">
+        {% include send-icon.html %}
+        <div>Send</div>
+      </button>
+    </div>
+  </div>
+  
+  
+</form>

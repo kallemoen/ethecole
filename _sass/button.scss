@@ -1,0 +1,183 @@
+@import "colors";
+@import "viewports";
+
+.btn {
+  color: $white;
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 8px 10px;
+  outline: 0;
+  resize: none;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: initial;
+  text-align: center;
+
+  &:hover {
+    color: $white;
+  }
+   
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+
+  &.stretch-btn {
+    display: block;
+    width: 100%;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.btn-group  {
+  & > *:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+
+.btn-group-form {
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    float: right;
+    width: auto;
+
+    & > *:not(:first-child) {
+      margin-left: 0.5em;
+    }
+  }
+}
+
+@include for-tablet-landscape-down {
+  .mobile-stretch {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0em;
+    text-align: center;
+  }
+
+  .btn-group  {
+  & > *:not(:first-child) {
+    margin-left: 0em;
+  }
+  }
+}
+
+@mixin btn-theme($btn-color) {
+  border: solid 1px $btn-color;
+
+  &:hover {
+    background-color: darken($btn-color, 80%);
+  }
+
+  &:disabled, &:hover:disabled {
+    color: $grey-medium;
+    background-color: $grey-light;
+    cursor: not-allowed;
+  }
+}
+
+.ghost-btn {
+   background-color: transparent;
+   color: $black;
+   border: 1px solid $black;
+
+   &:hover {
+    background-color: $accent-color;
+    color: $white;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.white-btn {
+   background-color: transparent;
+   color: $grey-black;
+   &:hover {
+    background-color: $grey-light;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+.primary-btn {
+  @include btn-theme($white);
+}
+
+.big-btn {
+  font-size: 1.1em;
+  padding: 0.8em 0.8em;
+}
+
+.small-btn {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tiny-btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  line-height: 1;
+}
+
+.action-btn {
+  color: $grey-darkest;
+  background-color: $grey-light;
+  width: 32px;
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+
+  &:before {
+    content: '…';
+    position: relative;
+    top: 2px;
+    font-family: "SSStandard";
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  &:hover {
+    background-color: darken($grey-light, 5%);
+  }
+}
+
+.icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4em;
+  padding-right: 1em;
+
+  svg {
+    width: initial;
+    margin-bottom: 2px;
+  }
+}
+
+.form-button {
+  background-color: $accent-color;
+  color: $white;
+  border: 1px solid $white;
+
+  &:hover {
+    background-color: lighten($accent-color, 5%);
+    color: $white;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}

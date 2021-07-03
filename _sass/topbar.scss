@@ -1,0 +1,19 @@
+@import "viewports";
+
+header {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 2em 0em;
+}
+
+@include for-mobile-only {
+	header {
+		p {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+

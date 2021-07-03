@@ -1,0 +1,145 @@
+@import "viewports";
+
+.card {
+	background-color: $grey-dark;
+	padding: 2em;
+
+	p, img {
+		margin: 0;
+	}
+
+	&:hover {
+		transform: translateY(-10px);
+		transition-timing-function: ease-in;
+		transition: 0.3s;
+	}
+}
+
+.teaser {
+	background-color: $grey-black;
+	cursor: pointer;
+	
+	img {
+		margin: 0;
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
+	}
+
+	div {
+		padding: 2em;
+	}
+
+	&:hover {
+		transform: translateY(-10px);
+		transition-timing-function: ease-in;
+		transition: 0.3s;
+	}
+}
+
+.logo-card {
+	display: flex;
+	flex-direction: column;
+
+	img {
+		max-width: 100px;
+		margin-bottom: 20px;
+	}
+
+}
+
+.avatar {
+	display: flex;
+	align-items: center;
+
+	:first-child {
+		margin-right: 1.5em;
+		max-width: 80px;
+		img {
+			border-radius: 100%;
+		}
+	}
+	:last-child {
+		width: 100%;
+		:first-child {
+			min-width: 100%;
+			font-weight: 700;
+		}
+		:last-child {
+			color: $grey-dark;
+		}
+	}
+}
+
+.feature {
+	display: flex;
+	align-items: flex-start;
+
+	:first-child {
+		margin-right: 1.5em;
+		max-width: 80px;
+	}
+	:last-child {
+		width: 100%;
+		
+		strong { color: $white;} 
+		p { color: $grey-dark; }
+		.git-stars { p { color: $accent-color; } }
+		:first-child { min-width: 100%; }
+		
+	}
+}
+
+.bullet {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;	
+
+
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+.card-row-highlight {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 2; 
+	grid-gap: 1em;
+
+	p {
+		color: $grey-dark;
+	}
+
+	> div:last-child {
+		grid-column: span 2;
+	}
+}
+
+.card-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1em;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+@include for-tablet-landscape-down {
+	.card-row, .card-row-highlight {
+		display: block;
+		.card, .teaser {
+			margin-bottom: 1em;
+		}
+	}
+}

@@ -1,0 +1,104 @@
+@import "colors";
+@import "mixins.scss";
+
+// Input component original source: https://codepen.io/lucasyem/pen/ZEEYKdj
+
+$primary: lighten($accent-color, 30%);
+$secondary: $grey-light;
+$font-size-local-small: 1rem;
+$font-size-local-big: 1.3rem;
+
+#contact-form {
+  margin-top: 2em;
+  display: flex;
+  flex: auto;
+  gap: 3em;
+
+  > div:first-child {
+    flex-grow: 1;
+  }
+
+  > div:last-child {
+    flex-grow: 4;
+  }
+
+  @include for-tablet-landscape-down {
+    flex-direction: column;
+  }
+
+  & textarea {
+    font-size: 1.1rem;
+    resize: none;
+    height: 8em;
+  }
+
+  & button[type=submit] {
+    margin-left: auto;
+    @include for-tablet-landscape-down {
+      margin-right: auto;
+    }
+  }
+
+  .extend-margin {
+    margin-top: 3em;
+  }
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $grey-medium;
+  outline: 0;
+  font-size: $font-size-local-big;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: $font-size-local-big;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: $font-size-local-small;
+  color: $grey-medium;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: $font-size-local-small;
+    color: $primary;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+
+/* reset input */
+.form__field {
+  &:required,&:invalid { box-shadow:none; }
+}
