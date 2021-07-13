@@ -23,7 +23,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 cta: Get Your Ticket
 name: Eth École
-ticket: tickets.ethecole.com
+ticket: https://tickets.ethecole.com
 
 # Build settings
 markdown: kramdown
